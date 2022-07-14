@@ -18,7 +18,7 @@ def capabilities():
         "appium:appPackage": "io.appium.android.apis",
         "appium:appActivity": "io.appium.android.apis.ApiDemos",
         "platformName": "Android",
-        "appium:uid": "8RBDU19325003729",
+        "appium:uid": "emulator-5554",
         "automationName": "UIAutomator2",
     }
 
