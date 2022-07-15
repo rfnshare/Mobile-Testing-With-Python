@@ -25,3 +25,4 @@ text = driver.find_element(AppiumBy.XPATH, "//android.widget.Toast").text
 print(text)
 assert "People Names: Group 0" in text
 time.sleep(5)
+driver.quit()

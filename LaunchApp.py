@@ -15,8 +15,8 @@ from appium.webdriver.common.appiumby import AppiumBy
 
 def capabilities():
     desired_caps = {
-        "appium:appPackage": "io.appium.android.apis",
-        "appium:appActivity": "io.appium.android.apis.ApiDemos",
+        "appium:appPackage": "com.karshare.app",
+        "appium:appActivity": "com.karshare.app.MainActivity",
         "platformName": "Android",
         "appium:uid": "emulator-5554",
         "automationName": "UIAutomator2",
