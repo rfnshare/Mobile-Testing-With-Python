@@ -19,4 +19,5 @@ option1 = driver.find_element(AppiumBy.XPATH,
                               '//android.widget.RadialTimePickerView.RadialPickerTouchHelper[@content-desc="15"]')
 option2 = driver.find_element(AppiumBy.XPATH,
                               '//android.widget.RadialTimePickerView.RadialPickerTouchHelper[@content-desc="45"]')
-touch.long_press(option1, 2000).move_to(option2).release().perform()
+# touch.long_press(option1, 2000).move_to(option2).release().perform()
+driver.tap([(100, 20), (100, 60), (100, 100)], 500)
