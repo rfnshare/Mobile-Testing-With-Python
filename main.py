@@ -1,18 +1,15 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import unittest
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-    a = "Code : 379670"
-    print(a.split(" "))
+class Capabilities(unittest.TestCase):
+    def test_1(self):
+        pass
 
-file = "resources/ApiDemos-debug.apk"
-# Press the green button in the gutter to run the script.
+
+class Capabilities2(unittest.TestCase):
+    def test_3(self):
+        pass
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    unittest.main()
