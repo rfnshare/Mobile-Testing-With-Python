@@ -14,11 +14,11 @@ from appium.options.android import UiAutomator2Options
 def capabilities():
     options = UiAutomator2Options()
     options.device_name = 'Pixel 4 API 30'
-    options.app = 'C:/Users/rfnsh/PycharmProjects/pythonMobileTesting/resources/ApiDemos-debug.apk'
+    # options.app = 'C:/Users/rfnsh/PycharmProjects/pythonMobileTesting/resources/Maps_base.apk'
     # options.platformVersion = '11'
     # options.udid = 'emulator-5554'
-    # options.app_package = 'io.appium.android.apis'
-    # options.app_activity = 'io.appium.android.apis.ApiDemos'
+    options.app_package = 'io.appium.android.apis'
+    options.app_activity = 'io.appium.android.apis.ApiDemos'
 
     driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
     return driver
@@ -27,3 +27,4 @@ def capabilities():
 if __name__ == '__main__':
     driver = capabilities()
     driver.implicitly_wait(20)
+    driver.quit()
