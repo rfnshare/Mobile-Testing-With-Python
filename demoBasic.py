@@ -19,8 +19,7 @@ class DemoBasic(ConfigureAppium, unittest.TestCase):
         #     print(i.get_attribute("text"))
         # wifi_settings[2].click()
 
-        self.driver.find_element(AppiumBy.XPATH,
-                                 "(//android.widget.TextView[@resource-id='android:id/title'])[3]").click()
+        self.driver.find_element(AppiumBy.XPATH, "(//android.widget.TextView[@resource-id='android:id/title'])[3]").click()
         self.driver.find_element(AppiumBy.ID, "android:id/edit").send_keys("Sample_WiFi")
         self.driver.find_element(AppiumBy.ID, "android:id/button1").click()
         self.driver.quit()
