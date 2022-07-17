@@ -41,8 +41,6 @@ def capabilities():
     # options.unlock_type = 'pin'
     # options.unlock_key = '1234'
 
-
-
     driver = webdriver.Remote("http://127.0.0.1:4723", options=options)
     session = driver.session_id
     print(session)
