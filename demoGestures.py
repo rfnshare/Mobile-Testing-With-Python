@@ -27,10 +27,11 @@ class DemoGesture(ConfigureAppium, unittest.TestCase):
         title = self.driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text='Sample menu']")
         self.assertEqual("Sample menu", title.text)
         self.assertTrue(title.is_displayed())
-        # self.driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text ='Sample action']").click()
-        # wait = WebDriverWait(self.driver, 10)
-        # wait.until(EC.presence_of_element_located((AppiumBy.XPATH, "//android.widget.Toast")))
-        # text = self.driver.find_element(AppiumBy.XPATH, "//android.widget.Toast").text
-        # print(text)
-        # assert "People Names: Group 0" in text
-        # self.driver.quit()
+        self.driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text ='Sample action']").click()
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.presence_of_element_located((AppiumBy.XPATH, "//android.widget.Toast")))
+        text = self.driver.find_element(AppiumBy.XPATH, "//android.widget.Toast").text
+        print(text)
+        assert "People Names: Group 0" in text
+        self.assertEqual("People Names: Group 0 clicked", text)
+        self.driver.quit()
