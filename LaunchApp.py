@@ -47,6 +47,7 @@ class ConfigureAppium:
         driver = webdriver.Remote("http://127.0.0.1:1234", options=self.options)
         session = driver.session_id
         print(session)
+        driver.implicitly_wait(10)
         return driver
 
 

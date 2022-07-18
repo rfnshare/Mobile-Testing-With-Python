@@ -4,9 +4,9 @@ from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from LaunchApp import capabilities
+from LaunchApp import ConfigureAppium
 
-driver = capabilities()
+driver = ConfigureAppium().launchApp()
 driver.implicitly_wait(10)
 driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, "text(\"Views\")").click()
 # driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, "text(\"Animation\")").click()
