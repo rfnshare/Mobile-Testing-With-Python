@@ -21,6 +21,8 @@ class DemoGesture(ConfigureAppium, unittest.TestCase):
         # touch.tap(element).perform() //Deprecated
         self.driver.execute_script("mobile: clickGesture", {'elementId': element, 'duration': 1000})
         time.sleep(5)
+
+        # Long click Gesture
         ppl_name = self.driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text='People Names']")
         # touch.long_press(ppl_name, 2000).release().perform() //Deprecated
         self.driver.execute_script("mobile: longClickGesture", {'elementId': ppl_name, 'duration': 2000})

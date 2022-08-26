@@ -38,7 +38,7 @@ class ConfigureAppium:
         # Whether to grant all the requested application permissions automatically when a test starts
         self.options.auto_grant_permissions = True
         # If set to true then emulator starts in headless mode (e.g. no UI is shown).
-        # options.is_headless = True
+        self.options.is_headless = True
         # Unlocking Phone
         # options.unlock_strategy = 'locksettings'
         # options.unlock_type = 'pin'
