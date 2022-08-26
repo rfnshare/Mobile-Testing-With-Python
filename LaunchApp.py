@@ -22,9 +22,9 @@ class ConfigureAppium:
     driver = None
 
     def launchApp(self):
-        # service.start()
-        # options.avd = 'Pixel_4_API_30'
-        self.options.udid = '8RBDU19325003729'
+        self.service.start()
+        self.options.avd = 'Pixel_4_API_30'
+        # self.options.udid = '8RBDU19325003729'
         self.options.app = 'C:/Users/rfnsh/PycharmProjects/pythonMobileTesting/resources/ApiDemos-debug.apk'
         self.options.platformVersion = '11'
         self.options.app_package = 'io.appium.android.apis'
@@ -32,9 +32,9 @@ class ConfigureAppium:
         # Enforces the server to dump the actual XML page source into the log if any error happens.
         self.options.print_page_source_on_find_failure = True
         # Skip the UiAutomator2 Server component installation on the device under test and all the related checks
-        self.options.skip_server_installation = True
+        # self.options.skip_server_installation = True
         # Device startup checks (whether it is ready and whether Settings app is installed) will be canceled.
-        self.options.skip_device_initialization = True
+        # self.options.skip_device_initialization = True
         # Whether to grant all the requested application permissions automatically when a test starts
         self.options.auto_grant_permissions = True
         # If set to true then emulator starts in headless mode (e.g. no UI is shown).
@@ -44,7 +44,7 @@ class ConfigureAppium:
         # options.unlock_type = 'pin'
         # options.unlock_key = '1234'
 
-        driver = webdriver.Remote("http://127.0.0.1:1234", options=self.options)
+        driver = webdriver.Remote("http://127.0.0.1:4723", options=self.options)
         session = driver.session_id
         print(session)
         driver.implicitly_wait(10)
