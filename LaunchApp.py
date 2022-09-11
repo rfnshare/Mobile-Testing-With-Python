@@ -23,10 +23,10 @@ class ConfigureAppium:
 
     def launchApp(self):
         self.service.start()
-        self.options.avd = 'Pixel_4_API_30'
-        # self.options.udid = '8RBDU19325003729'
+        # self.options.avd = 'Pixel_4_API_30'
+        self.options.udid = '8RBDU19325003729'
         self.options.app = 'C:/Users/rfnsh/PycharmProjects/pythonMobileTesting/resources/ApiDemos-debug.apk'
-        self.options.platformVersion = '11'
+        self.options.platformVersion = '10'
         self.options.app_package = 'io.appium.android.apis'
         self.options.app_activity = 'io.appium.android.apis.ApiDemos'
         # Enforces the server to dump the actual XML page source into the log if any error happens.

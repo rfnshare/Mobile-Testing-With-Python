@@ -31,6 +31,7 @@ class DemoScrollGesture(ConfigureAppium, unittest.TestCase):
         #                          'new UiScrollable(new UiSelector()).scrollIntoView(text(\"ImageView\"))')
         origin_el = self.driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Animation")
         destination_el = self.driver.find_element(AppiumBy.ACCESSIBILITY_ID, "WebView")
-        self.driver.scroll(origin_el, destination_el)
-        # self.driver.execute_script('mobile: scrollGesture',
-        #                            {'elementId': destination_el, 'direction': 'up', 'percent': 3.0})
+        destination_el = self.driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[@resource-id='com.karshare.app:id/car']")
+        # self.driver.scroll(origin_el, destination_el)
+        self.driver.execute_script('mobile: scrollGesture',
+                                   {'elementId': destination_el, 'direction': 'down', 'percent': 10.0})
