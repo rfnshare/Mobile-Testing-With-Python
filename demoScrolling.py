@@ -27,12 +27,12 @@ class DemoScrollGesture(ConfigureAppium, unittest.TestCase):
         self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, "text(\"Views\")").click()
 
         # Google Built In Scrolling
-        # self.scroll('WebView')
+        self.scroll('WebView')
 
         # Scroll Gesture (Until End)
-        self.can_scroll_more()
-        while self.can_scroll_more() is True:
-            self.can_scroll_more()
+        # self.can_scroll_more()
+        # while self.can_scroll_more() is True:
+        #     self.can_scroll_more()
 
         # origin_el = self.driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Animation")
         # destination_el = self.driver.find_element(AppiumBy.ACCESSIBILITY_ID, "WebView")
