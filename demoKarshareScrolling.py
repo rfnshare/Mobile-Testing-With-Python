@@ -1,6 +1,5 @@
 import time
 import unittest
-
 from appium.webdriver.common.appiumby import AppiumBy
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.webdriver.support.wait import WebDriverWait
@@ -24,7 +23,7 @@ class DemoScrollGesture(ConfigureAppium, unittest.TestCase):
                                                   'percent': 3.0})
         print("---->", scroll_more)
 
-        while scroll_more is True or False:
+        while scroll_more is True:
             scroll_more = self.driver.execute_script('mobile: scrollGesture',
                                                      {'elementId': destination_element, 'direction': 'down',
                                                       'percent': 3.0})
