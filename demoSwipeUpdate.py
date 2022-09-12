@@ -11,6 +11,11 @@ from LaunchApp import ConfigureAppium
 class DemoSwipeGesture(ConfigureAppium, unittest.TestCase):
     driver = ConfigureAppium().launchApp()
 
+    def swipe(self, element, direction):
+        self.driver.execute_script('mobile: swipeGesture',
+                                   {'elementId': element, 'direction': direction,
+                                    'percent': 0.75})
+
     def test_basicSwipeGesture(self):
         self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, "text(\"Views\")").click()
         self.driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Gallery").click()
@@ -30,8 +35,6 @@ class DemoSwipeGesture(ConfigureAppium, unittest.TestCase):
         #                                         'percent': 0.75})
         #     else:
         #         break
-        self.driver.execute_script('mobile: swipeGesture',
-                                   {'elementId': images[0], 'direction': 'left',
-                                    'percent': 0.75})
+        self.swipe(images[0], 'left')
 
         assert "false" in images[0].get_attribute("focusable")
