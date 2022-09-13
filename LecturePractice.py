@@ -11,15 +11,18 @@ from LaunchApp import ConfigureAppium
 class Practice(ConfigureAppium, unittest.TestCase):
     driver = ConfigureAppium().launchApp()
 
+    def wait(self, method, locator):
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.presence_of_element_located((method, locator)))
+
     def test_AlertPractice(self):
         self.driver.find_element(AppiumBy.ANDROID_UIAUTOMATOR, "text(\"App\")").click()
         self.driver.find_element(AppiumBy.ACCESSIBILITY_ID, "Alert Dialogs").click()
-
         self.driver.find_element(AppiumBy.ID, "io.appium.android.apis:id/two_buttons").click()
-        wait = WebDriverWait(self.driver, 10)
-        wait.until(EC.presence_of_element_located((AppiumBy.ID, "android:id/alertTitle")))
+        self.wait(AppiumBy.ID, "android:id/alertTitle")
         text = self.driver.find_element(AppiumBy.ID, "android:id/alertTitle").text
         assert "Lorem ipsum" in text
         self.driver.find_element(AppiumBy.ID, "android:id/button1").click()
         time.sleep(5)
+
         self.driver.quit()
