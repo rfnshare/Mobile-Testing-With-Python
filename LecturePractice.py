@@ -24,5 +24,11 @@ class Practice(ConfigureAppium, unittest.TestCase):
         assert "Lorem ipsum" in text
         self.driver.find_element(AppiumBy.ID, "android:id/button1").click()
         time.sleep(5)
-
+        self.driver.find_element(AppiumBy.XPATH, "//android.widget.Button[@content-desc=\"List dialog\"]").click()
+        self.driver.find_element(AppiumBy.XPATH, "//android.widget.TextView[@text='Command two']").click()
+        self.wait(AppiumBy.ID, 'android:id/message')
+        assert "Command two" in self.driver.find_element(AppiumBy.ID, 'android:id/message').text
+        self.driver.back()
+        time.sleep(5)
+        self.driver.find_element(AppiumBy.ID, "io.appium.android.apis:id/progress_button").click()
         self.driver.quit()
